@@ -10,20 +10,19 @@ class Footer extends PureComponent {
     }
 
     render() {
-        return (
-            <>
-              <div>
-      <a href="/home">Home</a>
-    </div>
-    <div>
-      <a href="/about">About</a>
-    </div>
-    <div>
-      <a href="/blog">Blog</a>
-    </div>
-              
-            </>
-        )
+      return (
+          <>
+          <div className='fixed bottom-0 left-0 w-full bg-purple-300'>
+              <div className="container mx-auto text-center">
+              <h2 className="text-lg font-semibold">Магазин рукодельных украшений.</h2>
+                <p className="mt-2">
+                    
+                </p>
+                <p className="mt-4">&copy; {new Date().getFullYear()} Capybara Все права защищены.</p>
+              </div>
+          </div>
+          </>
+      );
     }
 }
 

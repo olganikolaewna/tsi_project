@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-    <div className = 'bg-red-500 text-lg'>AAAAAAAA</div>
+    <div className="flex flex-col min-h-screen">
     <Header/>
     <BrowserRouter>
     <Routes>
@@ -25,6 +25,7 @@ function App() {
     </Routes>
     </BrowserRouter>
     <Footer/>
+    </div>
     </>
   )
   
