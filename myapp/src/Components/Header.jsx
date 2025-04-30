@@ -13,10 +13,10 @@ class Header extends PureComponent {
     render() {
         return (
             <>
-                <div className='fixed top-0 left-0 w-full bg-purple-300 py-4'>
+                <div className='fixed top-0 left-0 w-full bg-pink-400 py-4'>
                     <div className="container mx-auto flex justify-between items-center px-4">
                         <h1 className="text-2xl font-mono text-gray-800 mr-4">
-                            capybara
+                            skin care
                         </h1>
                         <div className="flex space-x-6 mr-32">
                             <a className="text-gray-800 hover:text-gray-600 flex items-center" href="/home">
@@ -24,9 +24,6 @@ class Header extends PureComponent {
                             </a>
                             <a className="text-gray-800 hover:text-gray-600 flex items-center" href="/about">
                                 о нас
-                            </a>
-                            <a className="text-gray-800 hover:text-gray-600 flex items-center" href="/catalog">
-                                каталог
                             </a>
                             <a className="text-gray-800 hover:text-gray-600 flex items-center" href="/contacts">
                                 контакты

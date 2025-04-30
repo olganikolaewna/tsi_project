@@ -12,13 +12,13 @@ class Footer extends PureComponent {
     render() {
       return (
           <>
-          <div className='fixed bottom-0 left-0 w-full bg-purple-300'>
+          <div className='fixed bottom-0 left-0 w-full bg-pink-400'>
               <div className="container mx-auto text-center">
-              <h2 className="text-lg font-semibold">Магазин рукодельных украшений.</h2>
+              <h2 className="text-black text-lg font-semibold">Ваш помощник по уходу за кожей.</h2>
                 <p className="mt-2">
                     
                 </p>
-                <p className="mt-4">&copy; {new Date().getFullYear()} Capybara Все права защищены.</p>
+                <p className="mt-4 text-black">&copy; {new Date().getFullYear()} skin care. Все права защищены.</p>
               </div>
           </div>
           </>
