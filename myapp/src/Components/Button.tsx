@@ -5,6 +5,7 @@ interface ButtonProps {
     onClick: () => void; // Функция, вызываемая при нажатии кнопки
     children: React.ReactNode; // Содержимое кнопки
     className?: string; // Дополнительные классы для стилизации
+    type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, children, className = '' }) => {

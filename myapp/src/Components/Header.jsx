@@ -19,7 +19,7 @@ class Header extends PureComponent {
                             skin care
                         </h1>
                         <div className="flex space-x-6 mr-32">
-                            <a className="text-gray-800 hover:text-gray-600 flex items-center" href="/home">
+                            <a className="text-gray-800 hover:text-gray-600 flex items-center" href="/">
                                 домой
                             </a>
                             <a className="text-gray-800 hover:text-gray-600 flex items-center" href="/about">
