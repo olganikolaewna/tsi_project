@@ -44,7 +44,7 @@ class Header extends PureComponent<HeaderProps, HeaderState> {
               className="text-gray-800 hover:text-gray-600 flex items-center" 
               href="/blog"
             >
-              контакты
+              блог
             </a>
           </nav>
           

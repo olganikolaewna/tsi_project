@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 const Blog = () => {
     const [data, setData] = useState<{ message: string; title: string } | null>(null);
@@ -27,10 +28,17 @@ const Blog = () => {
 
 
     return (
+        <>
+        <Helmet>
+            <title>Blog</title>
+            <meta name = "description" content = "Страница блога"></meta>
+            <meta name = "keywords" content = "блог, описание"></meta>
+        </Helmet>
         <div style={{ backgroundColor: 'pink', padding: '30px' }}>
             <h1>{data?.title}</h1>
             <p>{data?.message}</p>
         </div>
+        </>
     );
 };
 

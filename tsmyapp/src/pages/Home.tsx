@@ -4,6 +4,7 @@ import Input from '../Components/Input';
 import Text from '../Components/Text';
 import ProductModal from '../Components/ProductModal';
 import ProductCard from '../Components/ProductCard';
+import {Helmet} from "react-helmet";
 
 interface Props {}
 
@@ -32,7 +33,9 @@ class Home extends PureComponent<Props, State> {
             ],
             isModalOpen: false,
         };
+        
     }
+    
 
     handleButtonClick = (buttonName: string) => {
         console.log(`${buttonName} button clicked`);
@@ -62,6 +65,11 @@ class Home extends PureComponent<Props, State> {
 
         return (
             <>
+            <Helmet>
+                <title>Home</title>
+                <meta name = "description" content = "Главная страница сайта"></meta>
+                <meta name = "keywords" content = "главная, переходы"></meta>
+            </Helmet>
                 <main className="flex-grow flex flex-col items-center justify-center px-8 py-12">
                     <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-10">
                         <img src="/home1.jpg" alt="cosmetics" className="w-full md:w-1/2 rounded-lg shadow-md"/>
