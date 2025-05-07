@@ -1,41 +1,19 @@
-import express from 'express';
-import cors from 'cors';
 
+import express from "express";
+import cors from "cors";
 const app = express();
-const PORT = 5000;
+const port = 5000;
 
-app.use(cors()); // Разрешает кросс-доменные запросы
-app.use(express.json()); // Для обработки JSON
+app.use(cors());
+app.use(express.json());
 
-// Пример данных
-const products = [
-    {
-        id: 1,
-        title: "Продукт 1",
-        description: "Описание продукта 1",
-        price: "1000",
-    },
-    {
-        id: 2,
-        title: "Продукт 2",
-        description: "Описание продукта 2",
-        price: "2000",
-    },
-    {
-        id: 3,
-        title: "Продукт 3555",
-        description: "Описание продукта 3",
-        price: "3000",
-    },
-];
-
-// Обработчик для корневого маршрута
-app.get('/', (req, res) => {
-    res.json(products);
+//Метод GET
+app.get("/api/data", (req, res) => {
+  res.json({ message: "Hello from server!", title: "Яблоко" });
 });
 
+//http://localhost:5000/api/data
 
-// Запуск сервера
-app.listen(PORT, () => {
-    console.log(`Сервер запущен на http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });

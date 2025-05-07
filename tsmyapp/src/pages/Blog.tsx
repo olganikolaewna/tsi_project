@@ -1,71 +1,61 @@
-import React, { PureComponent, ReactNode } from 'react';
+// import React, { PureComponent, ReactNode } from 'react'
 
-interface Props {}
-interface State {
-    posts: Array<{
-        id: number;
-        title: string;
-        content: string;
-    }>;
-    loading: boolean;
-    error: string | null;
-}
+// interface Props {}
+// interface State {}
 
-class Blog extends PureComponent<Props, State> {
-    constructor(props: Props) {
-        super(props);
+// class Blog extends PureComponent<Props, State> {
+//     constructor(props: Props) {
+//         super(props)
 
-        this.state = {
-            posts: [],
-            loading: true,
-            error: null,
+//         this.state = {
+            
+//         }
+        
+//     }
+    
+
+//     render(): ReactNode {
+//         return (
+//             <div style={{ backgroundColor: 'red', padding: '20px' }}>Blog</div>
+            
+//         )
+//     }
+// }
+
+// export default Blog
+import React, { useEffect, useState } from 'react';
+
+const Blog = () => {
+    const [data, setData] = useState<{ message: string; title: string } | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("http://localhost:5000/api/data");
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const result = await response.json();
+                setData(result);
+            } catch (error) {
+                setError(error instanceof Error ? error.message : 'Unknown error');
+            } finally {
+                setLoading(false);
+            }
         };
-    }
 
-    componentDidMount() {
-        this.fetchPosts();
-    }
+        fetchData();
+    }, []);
 
-    fetchPosts = async () => {
-        try {
-            const response = await fetch('http://localhost:5000'); // Укажите ваш API
-            if (!response.ok) {
-                throw new Error('Ошибка сети');
-            }
-            const data = await response.json();
-            this.setState({ posts: data, loading: false });
-        } catch (error: unknown) {
-            if (error instanceof Error) {
-                this.setState({ error: error.message, loading: false });
-            } else {
-                this.setState({ error: 'Неизвестная ошибка', loading: false });
-            }
-        }
-    };
 
-    render(): ReactNode {
-        const { posts, loading, error } = this.state;
-
-        if (loading) {
-            return <div style={{ backgroundColor: 'red', padding: '20px' }}>Загрузка...</div>;
-        }
-
-        if (error) {
-            return <div style={{ backgroundColor: 'red', padding: '20px' }}>Ошибка: {error}</div>;
-        }
-
-        return (
-            <div style={{ backgroundColor: 'pink', padding: '20px' }}>
-                <h1>Блог</h1>
-                {posts.map(post => (
-                    <div key={post.id} style={{ marginBottom: '20px' }}>
-                        <h2>{post.title}</h2>
-                        <p>{post.content}</p>
-                    </div>
-                ))}
-            </div>
-        );
-    }
-}
+    return (
+        <div style={{ backgroundColor: 'pink', padding: '30px' }}>
+            <h1>{data?.title}</h1>
+            <p>{data?.message}</p>
+        </div>
+    );
+};
 
 export default Blog;
