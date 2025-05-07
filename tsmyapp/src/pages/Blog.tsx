@@ -1,28 +1,4 @@
-// import React, { PureComponent, ReactNode } from 'react'
 
-// interface Props {}
-// interface State {}
-
-// class Blog extends PureComponent<Props, State> {
-//     constructor(props: Props) {
-//         super(props)
-
-//         this.state = {
-            
-//         }
-        
-//     }
-    
-
-//     render(): ReactNode {
-//         return (
-//             <div style={{ backgroundColor: 'red', padding: '20px' }}>Blog</div>
-            
-//         )
-//     }
-// }
-
-// export default Blog
 import React, { useEffect, useState } from 'react';
 
 const Blog = () => {
@@ -33,7 +9,7 @@ const Blog = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/data");
+                const response = await fetch("http://localhost:3000/api/data");
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface ButtonProps {
-    onClick: () => void; // Функция, вызываемая при нажатии кнопки
-    children: React.ReactNode; // Содержимое кнопки
-    className?: string; // Дополнительные классы для стилизации
-    type?: "button" | "submit" | "reset"; // Тип кнопки
+    children: React.ReactNode;
+    type?: "button" | "submit" | "reset";
+    onClick?: () => void; // Сделать onClick необязательным
+    className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, children, className = '', type = 'button' }) => {

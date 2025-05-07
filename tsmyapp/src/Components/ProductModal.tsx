@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios'; // Импортируем axios
 import Button from './Button';
 import Input from './Input';
 
@@ -13,13 +14,21 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, onSubmit }
     const [description, setDescription] = React.useState<string>('');
     const [price, setPrice] = React.useState<string>('');
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onSubmit({ title, description, price });
-        setTitle('');
-        setDescription('');
-        setPrice('');
-        onClose();
+
+        const newProduct = { title, description, price };
+
+        try {
+            const response = await axios.post('http://localhost:5000/data', newProduct);
+            onSubmit(response.data); 
+            setTitle('');
+            setDescription('');
+            setPrice('');
+            onClose();
+        } catch (error) {
+            console.error('Ошибка:', error);
+        }
     };
 
     if (!isOpen) return null;
@@ -52,7 +61,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, onSubmit }
                         <Button type="button" onClick={onClose} className="bg-gray-300 hover:bg-gray-400">
                             Отмена
                         </Button>
-                        <Button type="submit" onClick={() => {}}>
+                        <Button type="submit">
                             Добавить
                         </Button>
                     </div>
