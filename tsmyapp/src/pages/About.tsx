@@ -1,11 +1,9 @@
 import React, { PureComponent, ReactNode } from 'react';
 
 interface Props {
-  // Определите пропсы, если они нужны
 }
 
 interface State {
-  // Определите состояние, если оно вам нужно
 }
 
 class About extends PureComponent<Props, State> {
@@ -13,7 +11,6 @@ class About extends PureComponent<Props, State> {
     super(props);
 
     this.state = {
-      // Инициализация состояния, если это необходимо
     };
   }
 

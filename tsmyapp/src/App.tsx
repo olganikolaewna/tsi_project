@@ -10,7 +10,7 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 
 function App() {
-  const [count, setCount] = useState<number>(0); // Явное указание типа для состояния
+  const [count, setCount] = useState<number>(0); 
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
-          {/* Убрал Route для Footer, так как он рендерится статически ниже */}
+          {}
         </Routes>
       </BrowserRouter>
       <Footer />

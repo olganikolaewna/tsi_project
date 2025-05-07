@@ -1,18 +1,14 @@
 import React, { PureComponent } from 'react';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
-// Определяем интерфейс для пропсов (если они есть)
+
 interface HeaderProps {
-  // Пример, если будут передаваться пропсы:
-  // title?: string;
-  // links?: Array<{ path: string; label: string }>;
+  
 }
 
-// Определяем интерфейс для состояния
+
 interface HeaderState {
-  // Пример состояния:
-  // isScrolled: boolean;
-  // activeLink: string;
+  
 }
 
 class Header extends PureComponent<HeaderProps, HeaderState> {
@@ -20,7 +16,6 @@ class Header extends PureComponent<HeaderProps, HeaderState> {
     super(props);
 
     this.state = {
-      // Инициализация состояния
     };
   }
 
@@ -47,7 +42,7 @@ class Header extends PureComponent<HeaderProps, HeaderState> {
             </a>
             <a 
               className="text-gray-800 hover:text-gray-600 flex items-center" 
-              href="/contacts"
+              href="/blog"
             >
               контакты
             </a>

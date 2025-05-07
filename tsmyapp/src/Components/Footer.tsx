@@ -13,7 +13,6 @@ class Footer extends PureComponent<FooterProps, FooterState> {
     super(props);
 
     this.state = {
-      // Инициализация состояния, если это необходимо
     };
   }
 
@@ -24,7 +23,7 @@ class Footer extends PureComponent<FooterProps, FooterState> {
           <div className="container mx-auto text-center">
             <h2 className="text-black text-lg font-semibold">Ваш помощник по уходу за кожей.</h2>
             <p className="mt-2">
-              {/* Здесь можно добавить дополнительный текст, если нужно */}
+              {}
             </p>
             <p className="mt-4 text-black">&copy; {new Date().getFullYear()} skin care. Все права защищены.</p>
           </div>
